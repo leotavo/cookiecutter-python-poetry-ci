@@ -10,7 +10,7 @@ on:
       - '**'
 
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ci-{% raw %}${{ github.ref }}{% endraw %}
   cancel-in-progress: true
 
 jobs:
@@ -41,9 +41,9 @@ jobs:
           path: |
             ~/.cache/pypoetry
             ~/.cache/pip
-          key: poetry-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+          key: {% raw %}poetry-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
           restore-keys: |
-            poetry-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-
+            poetry-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-{% endraw %}
 
       - name: Install dependencies
         run: poetry install --no-interaction
@@ -51,8 +51,8 @@ jobs:
       - name: Ruff (lint)
         run: poetry run ruff check .
 
-      - name: Black (format check)
-        run: poetry run black --check .
+      - name: Ruff (format check)
+        run: poetry run ruff format --check .
 
       - name: Mypy (type check)
         run: poetry run mypy .

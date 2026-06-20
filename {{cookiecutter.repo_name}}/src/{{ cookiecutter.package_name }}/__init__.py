@@ -1,6 +1,4 @@
 """Package initialization."""
 
-from typing import List
-
 __version__: str = "0.1.0"
-__all__: List[str] = ["__version__"]
+__all__: list[str] = ["__version__"]
