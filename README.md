@@ -66,7 +66,8 @@ poetry run pytest
 | `license` | `MIT` | License identifier |
 | `python_version` | `3.11` | Minimum Python version |
 | `gh_owner` | `leotavo` | GitHub owner, used in the repository URL |
-| `use_ci` / `use_precommit` | `y` | Feature flags for CI / pre-commit |
+| `use_ci` | `y` | Include the GitHub Actions CI workflow (`n` to omit) |
+| `use_precommit` | `y` | Include the pre-commit config (`n` to omit) |
 
 ## License
 
