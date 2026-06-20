@@ -17,7 +17,7 @@ def lint() -> None:
 
 
 def format() -> None:
-    rc = _run([sys.executable, "-m", "black", "."])
+    rc = _run([sys.executable, "-m", "ruff", "format", "."])
     sys.exit(rc)
 
 
