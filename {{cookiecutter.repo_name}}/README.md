@@ -6,28 +6,28 @@
 
 {{ cookiecutter.description }}
 
-## Ambiente de desenvolvimento
+## Development
 
-- Pré-requisitos: Python {{ cookiecutter.python_version }}+ e Poetry 2.x
-- Venv local: configurada via `poetry.toml` (`[virtualenvs] in-project = true`)
+- Requirements: Python {{ cookiecutter.python_version }}+ and Poetry 2.x
+- Local virtualenv: configured via `poetry.toml` (`[virtualenvs] in-project = true`)
 
-### Instalação
+### Install
 
 ```bash
 poetry install
 ```
 
-### Executar
+### Run
 
 ```bash
 poetry run python -m {{ cookiecutter.package_name }}
 ```
 
-### Scripts
+### Tasks
 
 ```bash
-poetry run lint
-poetry run format
-poetry run typecheck
-poetry run test
+poetry run lint        # ruff check
+poetry run format      # ruff format
+poetry run typecheck   # mypy
+poetry run test        # pytest with coverage
 ```
