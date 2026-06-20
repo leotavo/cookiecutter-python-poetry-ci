@@ -20,3 +20,12 @@ def test_bake_without_ci_and_precommit(cookies):
     assert result.exit_code == 0
     assert not (result.project_path / ".github").exists()
     assert not (result.project_path / ".pre-commit-config.yaml").exists()
+
+
+def test_bake_applies_custom_context(cookies):
+    result = cookies.bake(extra_context={"repo_name": "acme-tool", "package_name": "acme"})
+
+    assert result.exit_code == 0
+    pyproject = (result.project_path / "pyproject.toml").read_text()
+    assert 'name = "acme-tool"' in pyproject
+    assert (result.project_path / "src" / "acme" / "__init__.py").is_file()

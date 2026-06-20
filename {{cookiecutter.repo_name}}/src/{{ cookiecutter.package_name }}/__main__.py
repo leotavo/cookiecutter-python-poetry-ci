@@ -4,7 +4,7 @@ from . import __version__
 
 
 def main() -> int:
-    print(f"{{ cookiecutter.repo_name }} {__version__} - CLI mínima ativa")
+    print(f"{{ cookiecutter.repo_name }} {__version__} - CLI ready")
     return 0
 
 
