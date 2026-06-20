@@ -1,5 +1,5 @@
-# Fluxo de Git e Proteção da Branch main
+# Git flow and `main` branch protection
 
-- Branch padrão: `main`, PRs curtos a partir de `{type}/{slug}`
-- Proteções recomendadas: PR obrigatório (1 review), status checks, up-to-date, sem force-push
-- Releases: tags semânticas `vMAJOR.MINOR.PATCH` + Release notes
+- Default branch: `main`; short PRs from `{type}/{slug}`
+- Recommended protections: required PR (1 review), status checks, up-to-date, no force-push
+- Releases: semantic tags `vMAJOR.MINOR.PATCH` + release notes

@@ -1,20 +1,20 @@
-# Contribuição
+# Contributing
 
-Fluxo trunk‑based com convenção de branches `{type}/{slug}` e mensagens no padrão Conventional Commits.
+Trunk-based flow with `{type}/{slug}` branch names and Conventional Commit messages.
 
-## Convenção de branches
+## Branch naming
 
-- Padrão: `{type}/{slug}`
+- Pattern: `{type}/{slug}`
 - type ∈ {feat, fix, docs, chore, refactor, test}
-- slug em kebab‑case
+- slug in kebab-case
 
-## Pull Requests
+## Pull requests
 
-- Rebase ou squash; PRs pequenos (< 300 linhas).
-- Rode pre-commit, lint, typecheck e testes antes de abrir.
+- Rebase or squash; keep PRs small (< 300 lines).
+- Run pre-commit, lint, typecheck and tests before opening.
 
-## Mensagens de commit (Conventional Commits)
+## Commit messages (Conventional Commits)
 
-- Tipos: feat, fix, docs, refactor, test, chore
-- Escopo opcional: `type(scope): descrição`
-- Breaking change: `!` e `BREAKING CHANGE:` no corpo
+- Types: feat, fix, docs, refactor, test, chore
+- Optional scope: `type(scope): description`
+- Breaking change: `!` and a `BREAKING CHANGE:` footer
