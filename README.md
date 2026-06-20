@@ -13,6 +13,28 @@ Starting a Python project means re-wiring the same dozen tools every time. This 
 
 The template itself is **CI-verified**: every change re-generates a project with `cookiecutter` and runs its full check suite on Python 3.11, 3.12 and 3.13.
 
+## Demo
+
+![Generating a project and running its checks](docs/demo.svg)
+
+<details>
+<summary>Example session (text)</summary>
+
+```text
+$ cookiecutter gh:leotavo/cookiecutter-python-poetry-ci
+  repo_name [my-project]: acme-tool
+  package_name [app]: acme
+  python_version [3.11]: 3.12
+
+$ cd acme-tool && poetry install -q && poetry run poe test
+  ....                                          [100%]
+  TOTAL     7     0     100%
+  Required test coverage of 90.0% reached.
+  4 passed in 0.45s
+```
+
+</details>
+
 ## Quick start
 
 ```bash
