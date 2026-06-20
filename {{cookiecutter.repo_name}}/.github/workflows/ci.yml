@@ -9,6 +9,9 @@ on:
     branches:
       - '**'
 
+permissions:
+  contents: read
+
 concurrency:
   group: ci-{% raw %}${{ github.ref }}{% endraw %}
   cancel-in-progress: true
