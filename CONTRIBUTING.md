@@ -22,3 +22,13 @@ cookiecutter . --no-input   # bake the template locally
 ## Reporting issues
 
 Please use the bug-report / feature-request templates.
+
+## Code of Conduct
+
+This project follows a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you
+agree to uphold it.
+
+## Security
+
+Found a vulnerability? Please **don't** open a public issue — see
+[SECURITY.md](SECURITY.md) for the private reporting channel.

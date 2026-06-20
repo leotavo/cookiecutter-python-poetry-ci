@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: ci-{% raw %}${{ github.ref }}{% endraw %}
-  cancel-in-progress: true
+  cancel-in-progress: {% raw %}${{ github.ref != 'refs/heads/main' }}{% endraw %}
 
 jobs:
   ci:

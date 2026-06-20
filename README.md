@@ -4,14 +4,14 @@ A [Cookiecutter](https://www.cookiecutter.io/) template for production-ready Pyt
 
 [![CI](https://github.com/leotavo/cookiecutter-python-poetry-ci/actions/workflows/ci.yml/badge.svg)](https://github.com/leotavo/cookiecutter-python-poetry-ci/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/github/license/leotavo/cookiecutter-python-poetry-ci)](LICENSE)
-![Python](https://img.shields.io/badge/python-3.11%20|%203.12%20|%203.13-blue)
+![Python](https://img.shields.io/badge/python-3.11%20|%203.12%20|%203.13%20|%203.14-blue)
 [![Cookiecutter](https://img.shields.io/badge/cookiecutter-template-D4AA00?logo=cookiecutter&logoColor=white)](https://www.cookiecutter.io/)
 
 ## Why
 
 Starting a Python project means re-wiring the same dozen tools every time. This template gives you a project that **lints, formats, type-checks, tests and passes CI from the first commit** — so you write code, not config.
 
-The template itself is **CI-verified**: every change re-generates a project with `cookiecutter` and runs its full check suite on Python 3.11, 3.12 and 3.13.
+The template itself is **CI-verified**: every change re-generates a project with `cookiecutter` and runs its full check suite on **Python 3.11–3.14** across **Linux, macOS and Windows**.
 
 ## Demo
 
@@ -22,6 +22,7 @@ The template itself is **CI-verified**: every change re-generates a project with
 
 ```text
 $ cookiecutter gh:leotavo/cookiecutter-python-poetry-ci
+  project_name [My Project]: Acme Tool
   repo_name [my-project]: acme-tool
   package_name [app]: acme
   python_version [3.11]: 3.12
@@ -53,17 +54,25 @@ poetry run pytest
 - **pytest** + **coverage**, with smoke tests included
 - **pre-commit** hooks kept in sync with CI
 - **GitHub Actions** CI: `poetry install` → `ruff check` → `ruff format --check` → `mypy` → `pytest`
-- A minimal CLI entry point and `docs/` (git-flow, CI status checks)
+- A minimal CLI entry point (`python -m <package_name>`) and `docs/` (git-flow, CI status checks)
+- Governance defaults: `CODE_OF_CONDUCT.md`, `SECURITY.md`, Dependabot, `.gitattributes`, and a least-privilege `permissions` block in CI
 
 ### Generated structure
 
 ```text
 <repo_name>/
-├── .github/workflows/ci.yml
+├── .github/
+│   ├── dependabot.yml
+│   └── workflows/
+│       └── ci.yml
+├── .gitattributes
+├── .gitignore
 ├── .pre-commit-config.yaml
+├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
+├── SECURITY.md
 ├── docs/
 │   ├── ci-status-checks.md
 │   └── git-flow.md
@@ -71,8 +80,7 @@ poetry run pytest
 ├── pyproject.toml
 ├── src/<package_name>/
 │   ├── __init__.py
-│   ├── __main__.py
-│   └── cli.py
+│   └── __main__.py
 └── tests/test_smoke.py
 ```
 
