@@ -6,6 +6,27 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-06-20
+
+### Added
+
+- `poethepoet` task runner: `poetry run poe lint|format|typecheck|test`.
+- A 90% test-coverage gate (`[tool.coverage.report] fail_under`).
+- Codecov upload and a coverage badge in the generated project.
+- `pytest-cookies` tests that bake the template and assert the result — including
+  that `use_ci=n` / `use_precommit=n` drop CI and pre-commit — run by a dedicated
+  `template-tests` CI job.
+
+### Changed
+
+- Replaced the `[tool.poetry.scripts]` task functions (a `cli.py` shelling out to
+  each tool) with `poethepoet`.
+
+### Fixed
+
+- The `template-tests` CI job no longer collects the un-rendered template files;
+  collection is scoped to `tests/`.
+
 ## [0.1.0] - 2026-06-20
 
 ### Fixed
