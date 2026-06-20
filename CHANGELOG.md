@@ -6,6 +6,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- The generated CI workflow now uses `actions/checkout@v7` and `actions/setup-python@v6`,
+  matching the versions Dependabot bumps in this repository.
+
 ## [0.3.1] - 2026-06-20
 
 ### Added
