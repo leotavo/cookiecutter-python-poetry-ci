@@ -6,6 +6,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-06-20
+
+### Added
+
+- A terminal demo (`docs/demo.svg`) and a "Demo" section in the README.
+- Contributor docs: a root `CONTRIBUTING.md`, issue templates (bug / feature) and a
+  pull-request template.
+
 ## [0.3.0] - 2026-06-20
 
 ### Added
