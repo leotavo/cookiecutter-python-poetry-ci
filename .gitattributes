@@ -1,0 +1,4 @@
+# Normalize line endings: store LF in the repo and check out LF on every OS.
+# Keeps the cross-platform CI matrix (and `ruff format --check`) deterministic,
+# regardless of a runner's core.autocrlf setting.
+* text=auto eol=lf
