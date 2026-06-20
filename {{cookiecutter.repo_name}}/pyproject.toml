@@ -1,17 +1,20 @@
-[tool.poetry]
+[project]
 name = "{{ cookiecutter.repo_name }}"
 version = "0.1.0"
 description = "{{ cookiecutter.description }}"
-authors = ["{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>"]
+authors = [{ name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}" }]
 license = "{{ cookiecutter.license }}"
 readme = "README.md"
-repository = "https://github.com/{{ cookiecutter.gh_owner }}/{{ cookiecutter.repo_name }}"
+requires-python = ">={{ cookiecutter.python_version }}"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/{{ cookiecutter.gh_owner }}/{{ cookiecutter.repo_name }}"
+
+[tool.poetry]
 packages = [
   { include = "{{ cookiecutter.package_name }}", from = "src" }
 ]
-
-[tool.poetry.dependencies]
-python = "^{{ cookiecutter.python_version }}"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.12.0"
@@ -50,5 +53,5 @@ fail_under = 90
 exclude_also = ["if __name__ == .__main__.:"]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"

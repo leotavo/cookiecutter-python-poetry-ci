@@ -17,3 +17,13 @@ def test_main_returns_zero():
     from {{ cookiecutter.package_name }}.__main__ import main
 
     assert main() == 0
+
+
+def test_main_prints_banner(capsys):
+    from {{ cookiecutter.package_name }} import __version__
+    from {{ cookiecutter.package_name }}.__main__ import main
+
+    assert main() == 0
+    out = capsys.readouterr().out
+    assert "{{ cookiecutter.repo_name }}" in out
+    assert __version__ in out
