@@ -6,6 +6,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.3.2] - 2026-06-20
+
+### Added
+
+- A `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1, by reference) and a `SECURITY.md`
+  documenting a private vulnerability-reporting channel via GitHub Security Advisories,
+  raising the repository's community-health profile.
+
 ### Changed
 
 - The generated CI workflow now uses `actions/checkout@v7` and `actions/setup-python@v6`,
