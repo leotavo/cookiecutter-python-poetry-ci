@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  bake-and-test:
+    name: bake & test (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install cookiecutter and Poetry
+        run: pipx install cookiecutter && pipx install poetry
+
+      - name: Bake the template
+        run: >
+          cookiecutter . --no-input --output-dir generated
+          python_version="${{ matrix.python-version }}"
+
+      - name: Install, lint, type-check and test the generated project
+        working-directory: generated/my-project
+        run: |
+          poetry install --no-interaction
+          poetry run ruff check .
+          poetry run ruff format --check .
+          poetry run mypy .
+          poetry run pytest -q
