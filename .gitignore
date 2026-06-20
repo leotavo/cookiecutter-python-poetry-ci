@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Cookiecutter bake output (local testing / CI)
+/generated/
+/_baked/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
