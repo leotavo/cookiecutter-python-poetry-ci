@@ -6,6 +6,18 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.3.3] - 2026-06-20
+
+### Added
+
+- Generated projects now ship a least-privilege `permissions: contents: read`
+  block in their CI workflow and a `.gitattributes` enforcing LF line endings.
+
+### Changed
+
+- The template's own CI now bakes and tests across **ubuntu / macOS / windows**
+  on Python **3.11–3.14**, verifying the generated project beyond Linux.
+
 ## [0.3.2] - 2026-06-20
 
 ### Added
