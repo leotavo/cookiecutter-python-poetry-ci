@@ -15,5 +15,6 @@ labels: bug
 
 **Environment**
 
+- OS: (Windows / macOS / Linux)
 - cookiecutter version:
 - Python / Poetry version:

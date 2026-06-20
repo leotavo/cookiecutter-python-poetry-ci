@@ -2,6 +2,8 @@
 
 <!-- What does this change, and why? -->
 
+<!-- Link an issue when applicable, e.g. "Closes #123" -->
+
 ## Type
 
 - [ ] fix
