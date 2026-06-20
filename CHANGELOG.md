@@ -6,6 +6,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-06-20
+
 ### Fixed
 
 - The template failed to generate at all: GitHub Actions `${{ ... }}` expressions in
