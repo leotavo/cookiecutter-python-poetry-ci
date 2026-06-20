@@ -6,6 +6,27 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.3.4] - 2026-06-20
+
+### Added
+
+- Generated projects now ship a governance kit: `CODE_OF_CONDUCT.md` and
+  `SECURITY.md` with templated contact and advisory URLs.
+
+### Changed
+
+- Dependabot updates are now grouped per ecosystem with a `chore(deps)` commit
+  prefix and a `dependencies` label (one PR per ecosystem instead of several).
+- CI no longer cancels in-progress runs on `main`, so the status badge never
+  reflects a cancelled run from back-to-back pushes.
+
+### Fixed
+
+- README accuracy: removed the non-existent `src/<pkg>/cli.py` from the generated
+  tree, corrected Python support to 3.11–3.14 across Linux/macOS/Windows, and
+  listed the real generated files. Linked the Code of Conduct and Security policy
+  from `CONTRIBUTING.md`; added an OS field to the bug-report template.
+
 ## [0.3.3] - 2026-06-20
 
 ### Added
