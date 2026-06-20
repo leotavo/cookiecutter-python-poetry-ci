@@ -6,6 +6,20 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-06-20
+
+### Added
+
+- PEP 621 `[project]` metadata in the generated `pyproject.toml` (read natively by
+  poetry 2.x); `poetry-core` bumped to `>=2.0`.
+- Dependabot for the template repo and generated projects (GitHub Actions + pip).
+- Deeper tests: a behavioural banner-output test in the generated project, and a
+  `pytest-cookies` test asserting custom context flows into the generated files.
+
+### Changed
+
+- The generated CLI banner is now in English.
+
 ## [0.2.0] - 2026-06-20
 
 ### Added
