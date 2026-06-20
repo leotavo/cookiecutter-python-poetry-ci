@@ -27,15 +27,17 @@ def typecheck() -> None:
 
 
 def test() -> None:
-    rc = _run([
-        sys.executable,
-        "-m",
-        "pytest",
-        "-q",
-        "--cov=src",
-        "--cov-report=term-missing",
-        "--cov-report=xml",
-    ])
+    rc = _run(
+        [
+            sys.executable,
+            "-m",
+            "pytest",
+            "-q",
+            "--cov=src",
+            "--cov-report=term-missing",
+            "--cov-report=xml",
+        ]
+    )
     if rc == 5:
         rc = 0
     sys.exit(rc)
